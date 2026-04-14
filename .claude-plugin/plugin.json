@@ -1,0 +1,19 @@
+{
+  "name": "forge",
+  "description": "Orchestration skill for complex coding tasks: discovers intent, plans, delegates to specialized sub-agents, and verifies quality before shipping.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Mario Juárez"
+  },
+  "homepage": "https://github.com/mariomka/forge",
+  "repository": "https://github.com/mariomka/forge",
+  "license": "MIT",
+  "keywords": [
+    "skill",
+    "orchestration",
+    "planning",
+    "agents",
+    "workflow",
+    "sdd"
+  ]
+}

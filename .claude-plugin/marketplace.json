@@ -1,0 +1,18 @@
+{
+  "name": "forge-marketplace",
+  "description": "Marketplace for the Forge orchestration skill",
+  "owner": {
+    "name": "Mario Juárez"
+  },
+  "plugins": [
+    {
+      "name": "forge",
+      "description": "Orchestration skill for complex coding tasks: discovers intent, plans, delegates to specialized sub-agents, and verifies quality before shipping.",
+      "version": "1.0.0",
+      "source": "./",
+      "author": {
+        "name": "Mario Juárez"
+      }
+    }
+  ]
+}
