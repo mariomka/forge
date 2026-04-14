@@ -1,6 +1,5 @@
 {
   "name": "forge",
-  "displayName": "Forge",
   "description": "Orchestration skill for complex coding tasks: discovers intent, plans, delegates to specialized sub-agents, and verifies quality before shipping.",
   "version": "1.0.0",
   "author": {
@@ -17,6 +16,7 @@
     "workflow",
     "sdd"
   ],
+  "logo": "./assets/forge-logo-square.png",
   "skills": "./skills/",
   "agents": "./agents/"
 }

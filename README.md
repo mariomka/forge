@@ -66,13 +66,13 @@ Then install the plugin from this marketplace:
 
 ### Cursor
 
-> **Note:** The Cursor marketplace listing is pending approval. In the meantime, install by cloning this repo into `~/.cursor/plugins/local/forge`:
+> **Note:** The Cursor marketplace listing is pending approval. In the meantime, tell Cursor:
 >
-> ```bash
-> git clone https://github.com/mariomka/forge.git ~/.cursor/plugins/local/forge
+> ```
+> Fetch and follow instructions from https://raw.githubusercontent.com/mariomka/forge/main/.cursor-plugin/INSTALL.md
 > ```
 
-In Cursor Agent chat, install from the plugin marketplace:
+Once the marketplace listing is approved, install from Cursor Agent chat:
 
 ```text
 /add-plugin forge
