@@ -66,6 +66,12 @@ Then install the plugin from this marketplace:
 
 ### Cursor
 
+> **Note:** The Cursor marketplace listing is pending approval. In the meantime, install by cloning this repo into `~/.cursor/plugins/local/forge`:
+>
+> ```bash
+> git clone https://github.com/mariomka/forge.git ~/.cursor/plugins/local/forge
+> ```
+
 In Cursor Agent chat, install from the plugin marketplace:
 
 ```text
