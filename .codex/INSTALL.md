@@ -1,6 +1,6 @@
 # Installing Forge for Codex
 
-Enable the Forge skill in Codex via native skill discovery. Clone once, symlink, done.
+Forge installs as a native Codex skill plus six native Codex sub-agents. Clone once, symlink, done.
 
 ## Prerequisites
 
@@ -13,39 +13,29 @@ Enable the Forge skill in Codex via native skill discovery. Clone once, symlink,
    git clone https://github.com/mariomka/forge.git ~/.codex/forge
    ```
 
-2. **Symlink the skill and agents into `~/.agents/`:**
+2. **Symlink the skill into `~/.agents/skills/`:**
    ```bash
-   mkdir -p ~/.agents/skills ~/.agents/agents
-   ln -s ~/.codex/forge/skills/forge ~/.agents/skills/forge
-   ln -s ~/.codex/forge/agents/strategist.md ~/.agents/agents/strategist.md
-   ln -s ~/.codex/forge/agents/analyst.md    ~/.agents/agents/analyst.md
-   ln -s ~/.codex/forge/agents/builder.md    ~/.agents/agents/builder.md
-   ln -s ~/.codex/forge/agents/validator.md  ~/.agents/agents/validator.md
-   ln -s ~/.codex/forge/agents/reviewer.md   ~/.agents/agents/reviewer.md
-   ln -s ~/.codex/forge/agents/auditor.md    ~/.agents/agents/auditor.md
+   mkdir -p ~/.agents/skills
+   ln -sfn ~/.codex/forge/skills/forge ~/.agents/skills/forge
    ```
 
-   **Windows (PowerShell):**
-   ```powershell
-   New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills"
-   New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\agents"
-   cmd /c mklink /J "$env:USERPROFILE\.agents\skills\forge" "$env:USERPROFILE\.codex\forge\skills\forge"
-   foreach ($a in 'strategist','analyst','builder','validator','reviewer','auditor') {
-     cmd /c mklink "$env:USERPROFILE\.agents\agents\$a.md" "$env:USERPROFILE\.codex\forge\agents\$a.md"
-   }
+3. **Symlink the sub-agents into `~/.codex/agents/`:**
+   ```bash
+   mkdir -p ~/.codex/agents
+   for a in strategist analyst builder validator reviewer auditor; do
+     ln -sfn ~/.codex/forge/.codex/agents/$a.toml ~/.codex/agents/$a.toml
+   done
    ```
 
-3. **Restart Codex** so it picks up the new skill and agents.
+4. **Restart Codex** so it picks up the new skill and agents.
 
 ## Verify
 
 ```bash
-ls -la ~/.agents/skills/forge
+ls -la ~/.agents/skills/forge ~/.codex/agents/
 ```
 
-You should see a symlink to the cloned `skills/forge` directory.
-
-Start a session and ask Codex to `use forge to plan this feature` — the skill should trigger.
+You should see the skill symlink and six `*.toml` symlinks pointing into the cloned repo. Start a session and ask Codex to `use forge to plan this feature` — the skill should trigger.
 
 ## Updating
 
@@ -53,12 +43,12 @@ Start a session and ask Codex to `use forge to plan this feature` — the skill 
 cd ~/.codex/forge && git pull
 ```
 
-Existing symlinks pick up changes automatically. After pulling, check that every skill and agent in the repo has a symlink — re-run step 2 to create any that are missing.
+Existing symlinks pick up changes automatically. If new agents were added upstream, re-run step 3 to create the missing symlinks.
 
 ## Uninstalling
 
 ```bash
 rm ~/.agents/skills/forge
-rm ~/.agents/agents/{strategist,analyst,builder,validator,reviewer,auditor}.md
+rm ~/.codex/agents/{strategist,analyst,builder,validator,reviewer,auditor}.toml
 rm -rf ~/.codex/forge
 ```

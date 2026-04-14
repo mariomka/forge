@@ -8,13 +8,14 @@ Forge is an orchestration skill for coding agents. It owns complex tasks end-to-
 - `agents/` — sub-agent definitions. Each file's body is a **prompt**, not documentation — every paragraph lands in a model's context, so keep them tight and behavior-shaping.
 - `.claude-plugin/` — Claude Code `plugin.json` + `marketplace.json`.
 - `.cursor-plugin/` — Cursor `plugin.json`.
+- `.codex/agents/` — native Codex sub-agent TOML files (one per agent in `agents/`).
 - `.codex/INSTALL.md` — per-harness setup docs.
 
 ## Cross-Reference Hotspots
 
 Editing one file usually means editing several. The common landmines:
 
-- **Adding a new sub-agent** — create `agents/<name>.md`, then wire it into: SKILL.md (lifecycle if it has a phase, briefing, parallelize principle if it runs concurrently), `README.md` sub-agents list, and `.codex/INSTALL.md` symlink block.
+- **Adding a new sub-agent** — create `agents/<name>.md` AND a matching `.codex/agents/<name>.toml` (verbatim body + per-agent `sandbox_mode`), then wire it into: SKILL.md (lifecycle if it has a phase, briefing, parallelize principle if it runs concurrently), `README.md` sub-agents list, and `.codex/INSTALL.md` symlink loop.
 - **Version bumps** — `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` must stay in sync. `.cursor-plugin/plugin.json` too.
 
 ## Rules
