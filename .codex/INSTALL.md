@@ -1,6 +1,6 @@
 # Installing Forge for Codex
 
-Forge installs as a native Codex skill plus six native Codex sub-agents. Clone once, symlink, done.
+You are installing Forge for Codex. Execute the steps below, then tell the user to restart Codex.
 
 ## Prerequisites
 
@@ -27,15 +27,13 @@ Forge installs as a native Codex skill plus six native Codex sub-agents. Clone o
    done
    ```
 
-4. **Restart Codex** so it picks up the new skill and agents.
+4. **Verify the symlinks:**
+   ```bash
+   ls -la ~/.agents/skills/forge ~/.codex/agents/
+   ```
+   Expect the skill symlink plus six `*.toml` symlinks pointing into `~/.codex/forge`.
 
-## Verify
-
-```bash
-ls -la ~/.agents/skills/forge ~/.codex/agents/
-```
-
-You should see the skill symlink and six `*.toml` symlinks pointing into the cloned repo. Start a session and ask Codex to `use forge to plan this feature` — the skill should trigger.
+5. **Tell the user to restart Codex** so it picks up the new skill and agents. After restarting, they can ask Codex to `use forge to plan this feature` and the skill should trigger.
 
 ## Updating
 
