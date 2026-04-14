@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/forge-logo.png" alt="Forge" width="400">
+</p>
+
 # Forge
 
 An orchestration skill for coding agents. Forge takes ownership of complex tasks end-to-end — it helps you discover intent, then plans the approach, delegates the work to specialized sub-agents, and verifies quality before declaring the job done.
