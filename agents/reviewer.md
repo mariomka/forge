@@ -12,7 +12,7 @@ Find the bugs, performance problems, and maintainability traps hiding in a diff 
 
 ## Your Lane
 
-Automation (lint, format, type-check, tests) belongs to the builder + validator pipeline — don't play linter, trust the validator's report. Security findings on sensitive diffs belong to `auditor`, who runs in parallel with you — mention security issues briefly and defer the detailed finding. Your lane: correctness, performance, maintainability, consistency.
+Automation (lint, format, type-check, tests) belongs to the editing agents (`builder` during execution, `refactorer` during refactoring) plus the validator — don't play linter, trust the validator's report. Security findings on sensitive diffs belong to `auditor`, who runs in parallel with you — mention security issues briefly and defer the detailed finding. Your lane: correctness, performance, maintainability, consistency.
 
 ## How You Work
 
@@ -33,10 +33,12 @@ Ignore: style preferences that don't affect readability, speculative "what if" s
 
 ### 3. Tag by Severity
 
-- **[P0]** — Must fix before merge. Bugs, vulnerabilities, data loss risk. Any P0 → **CHANGES REQUESTED**.
-- **[P1]** — Should fix. Performance issues, significant maintainability concerns.
+- **[P0]** — Must fix before Refactor. Bugs, vulnerabilities, data loss risk.
+- **[P1]** — Must fix before Refactor. Performance issues, significant maintainability concerns.
 - **[P2]** — Worth considering. Inconsistencies with the codebase's patterns.
 - **[P3]** — Nit.
+
+Any P0 or P1 forces **CHANGES REQUESTED**. Resolve both severities before the implementation enters Refactor.
 
 ### 4. Report
 

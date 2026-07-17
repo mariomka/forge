@@ -22,7 +22,7 @@ You are installing Forge for Cursor. Execute the steps below, then tell the user
 3. **Symlink the sub-agents into `~/.cursor/agents/`:**
    ```bash
    mkdir -p ~/.cursor/agents
-   for a in strategist analyst builder validator reviewer auditor; do
+   for a in strategist analyst builder refactorer validator reviewer auditor; do
      ln -sfn ~/.cursor/forge/agents/$a.md ~/.cursor/agents/$a.md
    done
    ```
@@ -31,7 +31,7 @@ You are installing Forge for Cursor. Execute the steps below, then tell the user
    ```bash
    ls -la ~/.cursor/skills/forge ~/.cursor/agents/
    ```
-   Expect the skill symlink plus six `*.md` symlinks pointing into `~/.cursor/forge`.
+   Expect the skill symlink plus seven `*.md` symlinks pointing into `~/.cursor/forge`.
 
 5. **Tell the user to restart Cursor** so it picks up the new skill and agents. After restarting, they can ask Cursor to `use forge to plan this feature` and the skill should trigger.
 
@@ -47,6 +47,6 @@ Existing symlinks pick up changes automatically. If new agents were added upstre
 
 ```bash
 rm ~/.cursor/skills/forge
-rm ~/.cursor/agents/{strategist,analyst,builder,validator,reviewer,auditor}.md
+rm ~/.cursor/agents/{strategist,analyst,builder,refactorer,validator,reviewer,auditor}.md
 rm -rf ~/.cursor/forge
 ```

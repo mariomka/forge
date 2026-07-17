@@ -30,10 +30,12 @@ Forge will take it from there — starting with a discovery conversation, then p
 ## Lifecycle
 
 ```
-DISCOVERY → APPROVE → RESEARCH → PLAN → [RECONFIRM*] → EXECUTION → VERIFY
+DISCOVERY → APPROVE → RESEARCH → PLAN → [RECONFIRM*] → EXECUTION → VERIFY → [REFACTOR → RE-VERIFY]
 ```
 
 *\* Reconfirm only fires when the plan deviates from the approved approach. If it tracks, Forge skips straight to execution instead of asking for another rubber-stamp.*
+
+Refactor runs only after a green Verify and skips docs, config, generated output, and trivial mechanical diffs. If it changes code, Forge runs the full verification team once more; if it skips, the task is already done.
 
 ## Sub-agents
 
@@ -42,6 +44,7 @@ Forge coordinates a team of specialized agents:
 - **strategist** — turns goals into sequenced roadmaps
 - **analyst** — investigates how the code works, and root-causes failures
 - **builder** — builds the solution
+- **refactorer** — simplifies verified changes without altering behavior
 - **validator** — validates against acceptance criteria with evidence
 - **reviewer** — checks code quality
 - **auditor** — security audit for sensitive surfaces (runs in parallel with reviewer)

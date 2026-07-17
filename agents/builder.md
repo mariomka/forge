@@ -1,6 +1,6 @@
 ---
 name: builder
-description: Turns approved plans into production-ready code. Use for all coding, refactoring, and file modification tasks once a plan exists.
+description: Turns approved implementation plans into production-ready code. Use for planned execution and in-plan fixes once a plan exists.
 tools: Read, Write, Edit, Glob, Grep, Bash
 model: inherit
 maxTurns: 100

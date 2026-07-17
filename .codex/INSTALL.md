@@ -22,7 +22,7 @@ You are installing Forge for Codex. Execute the steps below, then tell the user 
 3. **Symlink the sub-agents into `~/.codex/agents/`:**
    ```bash
    mkdir -p ~/.codex/agents
-   for a in strategist analyst builder validator reviewer auditor; do
+   for a in strategist analyst builder refactorer validator reviewer auditor; do
      ln -sfn ~/.codex/forge/.codex/agents/$a.toml ~/.codex/agents/$a.toml
    done
    ```
@@ -31,7 +31,7 @@ You are installing Forge for Codex. Execute the steps below, then tell the user 
    ```bash
    ls -la ~/.agents/skills/forge ~/.codex/agents/
    ```
-   Expect the skill symlink plus six `*.toml` symlinks pointing into `~/.codex/forge`.
+   Expect the skill symlink plus seven `*.toml` symlinks pointing into `~/.codex/forge`.
 
 5. **Tell the user to restart Codex** so it picks up the new skill and agents. After restarting, they can ask Codex to `use forge to plan this feature` and the skill should trigger.
 
@@ -47,6 +47,6 @@ Existing symlinks pick up changes automatically. If new agents were added upstre
 
 ```bash
 rm ~/.agents/skills/forge
-rm ~/.codex/agents/{strategist,analyst,builder,validator,reviewer,auditor}.toml
+rm ~/.codex/agents/{strategist,analyst,builder,refactorer,validator,reviewer,auditor}.toml
 rm -rf ~/.codex/forge
 ```

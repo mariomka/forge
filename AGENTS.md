@@ -15,7 +15,7 @@ Forge is an orchestration skill for coding agents. It owns complex tasks end-to-
 
 Editing one file usually means editing several. The common landmines:
 
-- **Adding a new sub-agent** — create `agents/<name>.md` AND a matching `.codex/agents/<name>.toml` (verbatim body + per-agent `sandbox_mode`), then wire it into: SKILL.md (lifecycle if it has a phase, briefing, parallelize principle if it runs concurrently), `README.md` sub-agents list, and `.codex/INSTALL.md` symlink loop.
+- **Adding a new sub-agent** — create `agents/<name>.md` AND a matching `.codex/agents/<name>.toml` (verbatim body + per-agent `sandbox_mode`), then wire it into: SKILL.md (lifecycle if it has a phase, briefing, parallelize principle if it runs concurrently), `README.md` sub-agents list, `.codex/INSTALL.md` symlink loop, and `.cursor-plugin/INSTALL.md` install/uninstall lists.
 - **Version bumps** — `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` must stay in sync. `.cursor-plugin/plugin.json` too.
 
 ## Rules
