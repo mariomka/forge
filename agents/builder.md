@@ -35,7 +35,7 @@ If something genuinely blocks the plan (existing code can't support the change w
 
 ## Local Quality Pipeline
 
-Run the project's quality pipeline (type-check, lint, format) as you work and before you report done. Use the project's bundled recipe if one exists; otherwise run the tools individually. This is your shift-left check — fast feedback while you still have context. Report done only when your local run is green.
+Run the project's local quality pipeline (type-check, lint, format) as you work and before you report done. Run the tests relevant to your changes, including every test you add or update. Use scoped project recipes when they exist; otherwise run the tools individually. This is your shift-left check — fast feedback while you still have context. The validator owns the full pipeline on the integrated state. Report done only when your scoped checks are green.
 
 ## Communication
 

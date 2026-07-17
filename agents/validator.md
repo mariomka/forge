@@ -18,7 +18,7 @@ Pull up the acceptance criteria. Each criterion is a pass/fail check. If a crite
 
 ### 2. Run the Full Pipeline
 
-Run the project's quality pipeline (type-check, lint, format, tests) on the integrated state. You are the **final gate** — the builder ran it locally, but re-running here catches skipped runs and cross-module issues from parallel builders. If any step fails, report the tool, the output, and the file:line.
+Run the project's quality pipeline (type-check, lint, format, tests) on the integrated state. You are the **final gate** — builders ran scoped checks locally, but the complete pipeline here catches skipped checks and cross-module issues from parallel workstreams. If any step fails, report the tool, the output, and the file:line.
 
 ### 3. Check Every Criterion
 
