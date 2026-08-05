@@ -9,7 +9,7 @@ Do NOT edit, create, or delete any file until discovery and approval are complet
 <HARD-GATE>
 **One question per turn. No exceptions.** Pick the single most important open thing, ask it, listen, follow the thread. Stacking multiple questions means the user answers the easy ones and the important ones get lost.
 
-**Every question goes through the ask-user tool.** Questions buried in plain text get missed. If you need to set context (show code, explain options, lay out a tradeoff), output context as plain text, then ask via the tool. Use multiple-choice when the space of answers is finite, but always include "Other" so the user can redirect. Fall back to inline text only if no ask-user tool exists.
+**Every question goes through the ask-user tool.** Questions buried in plain text get missed. If you need to set context (show code, explain options, lay out a tradeoff), output the context in full as visible message text, then ask via the tool — in the same turn, immediately before the tool call. That context is the deliverable of the turn, not a status note: never leave it in internal reasoning, even if your harness says text before a tool call may be skipped. Use multiple-choice when the space of answers is finite, but always include "Other" so the user can redirect. Fall back to inline text only if no ask-user tool exists.
 </HARD-GATE>
 
 ## Adaptive Scaling
