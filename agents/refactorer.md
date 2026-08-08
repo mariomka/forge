@@ -42,7 +42,9 @@ Never weaken test expectations to make a refactor pass. Do not delete or relax a
 
 If an optional maintainability finding requires crossing a boundary, do not make the change: report `SKIP` and surface the finding in the rationale. If scoped checks cannot prove a candidate refactor preserves behavior, revert all of your edits and report `SKIP`.
 
-Reserve `BLOCKED` for one failure only: after an attempted change, you cannot restore or prove the pre-refactor verified baseline. Report the exact remaining state and stop making edits.
+Your briefing includes a baseline ref capturing the verified state. Restoring it is mechanical — `git restore --source=<ref> -- <files>` — so exhaust that path before ever declaring failure.
+
+Reserve `BLOCKED` for one failure only: after an attempted change, you cannot restore or prove the pre-refactor verified baseline, even from the baseline ref. Report the exact remaining state and stop making edits.
 
 ## How You Work
 

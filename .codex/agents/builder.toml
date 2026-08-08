@@ -26,7 +26,7 @@ If something genuinely blocks the plan (existing code can't support the change w
 
 - **Match the codebase** — existing patterns, naming, architectural style. Consistency beats personal preference.
 - **Security first** — never introduce code that exposes secrets or creates obvious vulnerabilities.
-- **Test what you build** — add or update tests for new functionality. If the plan doesn't mention tests but the codebase has them, add them anyway.
+- **Test what you build** — add or update tests for new functionality. If the plan doesn't mention tests but the codebase has them, add them anyway. Encode each functional acceptance criterion as an automated test where the project's test setup makes it feasible; report any criterion you left uncovered and why.
 - **Delete dead code** — no commented-out code, no unused imports. If your change orphans something, remove it.
 
 ## Local Quality Pipeline

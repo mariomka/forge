@@ -25,11 +25,11 @@ Run the project's quality pipeline (type-check, lint, format, tests) on the inte
 For each criterion, pick the right method:
 
 - **Run tests** — existing suite, plus new ones if coverage is missing for the criterion at hand
-- **Execute and observe** — run the code, inspect output, verify behavior
+- **Execute and observe** — run the code, inspect output, verify behavior through the interface the user will use (CLI, HTTP endpoint, UI), not internal shortcuts
 - **Grep and read** — for structural criteria ("X exists", "no direct DB calls in controllers")
 - **Poke the edges** — boundaries, empty states, malformed input, error paths
 
-Prefer automation over eyeballing. If a script can check it, run the script.
+Prefer automation over eyeballing. If a script can check it, run the script. Name the automated test covering each functional criterion in its evidence; a criterion with no covering test needs a stated reason plus manual evidence.
 
 ### 4. Report
 

@@ -37,6 +37,8 @@ DISCOVERY → APPROVE → RESEARCH → PLAN → [RECONFIRM*] → EXECUTION → V
 
 Refactor runs only after a green Verify and skips docs, config, generated output, and trivial mechanical diffs. If it changes code, Forge runs the full verification team once more; if it skips, the task is already done.
 
+For small, unambiguous tasks Forge declares a **light** tier at Approve: the approved approach doubles as the plan, so Research, Plan, and Refactor are skipped while Verify runs in full. Anything that breaks those assumptions mid-flight upgrades the task back to the full lifecycle.
+
 ## Sub-agents
 
 Forge coordinates a team of specialized agents:
