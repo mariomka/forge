@@ -1,7 +1,7 @@
 {
   "name": "forge",
-  "version": "1.2.0",
-  "description": "Orchestration skill for complex coding tasks: discovers intent, plans, delegates to specialized sub-agents, and verifies quality before shipping.",
+  "version": "1.2.1",
+  "description": "An end-to-end workflow for complex coding tasks. Forge turns vague requests into verified changes through discovery, planning, delegated execution, and review.",
   "author": {
     "name": "Mario Juárez",
     "url": "https://github.com/mariomka"
@@ -19,7 +19,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Forge",
-    "shortDescription": "Orchestrate complex coding tasks",
+    "shortDescription": "Ship complex coding tasks end to end",
     "longDescription": "Discover intent, plan execution, delegate work to specialized agents, and verify the result before shipping.",
     "developerName": "Mario Juárez",
     "category": "Productivity",

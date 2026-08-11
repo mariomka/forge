@@ -1,6 +1,6 @@
 ---
 name: forge
-description: Takes ownership of complex tasks — discovers intent, plans the approach, delegates to specialized agents, and verifies quality. Use when the task needs structure before code.
+description: An end-to-end workflow for complex coding tasks. Turns vague requests into verified changes through discovery, planning, delegated execution, and review. Use when the task needs structure before code.
 arguments: "task_description"
 ---
 

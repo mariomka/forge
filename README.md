@@ -4,7 +4,7 @@
 
 # Forge
 
-An orchestration skill for coding agents. Forge takes ownership of complex tasks end-to-end — it helps you discover intent, then plans the approach, delegates the work to specialized sub-agents, and verifies quality before declaring the job done.
+An end-to-end workflow for complex coding tasks. Forge turns vague requests into verified changes through discovery, planning, delegated execution, and review.
 
 The goal: prevent the most expensive mistake in software — building the wrong thing, or building the right thing badly. Discovery costs minutes; rework costs hours.
 

@@ -1,12 +1,13 @@
 # Agent Guidelines
 
-Forge is an orchestration skill for coding agents. It owns complex tasks end-to-end — running a discovery conversation, planning the approach, delegating work to specialized sub-agents, and verifying quality before shipping. This repo packages the skill and its sub-agents for every harness that can load local skills and agent definitions.
+Forge is an end-to-end workflow for complex coding tasks. It turns vague requests into verified changes through discovery, planning, delegated execution, and review. This repo packages the skill and its sub-agents for every harness that can load local skills and agent definitions.
 
 ## Layout
 
 - `skills/forge/` — the skill (`SKILL.md`) and the discovery protocol (`discovery.md`). These two files are the contract for how Forge operates.
 - `agents/` — sub-agent definitions. Each file's body is a **prompt**, not documentation — every paragraph lands in a model's context, so keep them tight and behavior-shaping.
 - `.claude-plugin/` — Claude Code `plugin.json` + `marketplace.json`.
+- `.codex-plugin/` — Codex `plugin.json`.
 - `.cursor-plugin/` — Cursor `plugin.json`.
 - `.codex/agents/` — native Codex sub-agent TOML files (one per agent in `agents/`).
 - `.codex/INSTALL.md` — per-harness setup docs.
@@ -16,7 +17,7 @@ Forge is an orchestration skill for coding agents. It owns complex tasks end-to-
 Editing one file usually means editing several. The common landmines:
 
 - **Adding a new sub-agent** — create `agents/<name>.md` AND a matching `.codex/agents/<name>.toml` (verbatim body + per-agent `sandbox_mode`), then wire it into: SKILL.md (lifecycle if it has a phase, briefing, parallelize principle if it runs concurrently), `README.md` sub-agents list, `.codex/INSTALL.md` symlink loop, and `.cursor-plugin/INSTALL.md` install/uninstall lists.
-- **Version bumps** — `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` must stay in sync. `.cursor-plugin/plugin.json` too.
+- **Version bumps** — `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, `.codex-plugin/plugin.json`, and `.cursor-plugin/plugin.json` must stay in sync.
 
 ## Rules
 
