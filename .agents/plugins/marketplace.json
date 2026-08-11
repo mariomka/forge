@@ -1,0 +1,21 @@
+{
+  "name": "forge-marketplace",
+  "interface": {
+    "displayName": "Forge"
+  },
+  "plugins": [
+    {
+      "name": "forge",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/mariomka/forge.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

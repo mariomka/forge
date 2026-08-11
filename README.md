@@ -17,10 +17,10 @@ Forge orchestrates sub-agents so the main context is almost never filled — eac
 
 ## How to Use
 
-Just tell Forge what you want, using the slash command:
+Use the `forge` skill by asking it for the thing you want to build:
 
 ```text
-/forge add a rate limiter to the public API
+/forge Add a rate limiter to the public API.
 ```
 
 Forge will take it from there — starting with a discovery conversation, then planning, then execution, with explicit checkpoints along the way.
@@ -53,7 +53,7 @@ Forge coordinates a team of specialized agents:
 
 ## Installation
 
-**Note:** Installation differs by platform. Claude Code and Cursor have built-in plugin marketplaces. Codex requires a small amount of manual setup.
+**Note:** Installation differs by platform. Claude Code and Codex use plugin marketplaces. Cursor marketplace approval is still pending.
 
 ### Claude Code (via Plugin Marketplace)
 
@@ -68,6 +68,17 @@ Then install the plugin from this marketplace:
 ```bash
 /plugin install forge@forge-marketplace
 ```
+
+### Codex (via Plugin Marketplace)
+
+Register the marketplace, then install Forge:
+
+```bash
+codex plugin marketplace add mariomka/forge
+codex plugin add forge@forge-marketplace
+```
+
+Restart Codex and open a new conversation so it loads the plugin.
 
 ### Cursor
 
@@ -84,14 +95,6 @@ Once the marketplace listing is approved, install from Cursor Agent chat:
 ```
 
 Or search for "forge" in the plugin marketplace.
-
-### Codex
-
-Tell Codex:
-
-```
-Fetch and follow instructions from https://raw.githubusercontent.com/mariomka/forge/main/.codex/INSTALL.md
-```
 
 ### Other harnesses
 

@@ -1,0 +1,40 @@
+{
+  "name": "forge",
+  "version": "1.2.0",
+  "description": "Orchestration skill for complex coding tasks: discovers intent, plans, delegates to specialized sub-agents, and verifies quality before shipping.",
+  "author": {
+    "name": "Mario Juárez",
+    "url": "https://github.com/mariomka"
+  },
+  "homepage": "https://github.com/mariomka/forge",
+  "repository": "https://github.com/mariomka/forge",
+  "license": "MIT",
+  "keywords": [
+    "orchestration",
+    "planning",
+    "agents",
+    "workflow",
+    "sdd"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Forge",
+    "shortDescription": "Orchestrate complex coding tasks",
+    "longDescription": "Discover intent, plan execution, delegate work to specialized agents, and verify the result before shipping.",
+    "developerName": "Mario Juárez",
+    "category": "Productivity",
+    "capabilities": [
+      "Planning",
+      "Multi-agent orchestration",
+      "Verification"
+    ],
+    "websiteURL": "https://github.com/mariomka/forge",
+    "defaultPrompt": [
+      "Use Forge to plan and ship this feature.",
+      "Use Forge to investigate and fix this bug.",
+      "Use Forge to own this complex task end to end."
+    ],
+    "composerIcon": "./assets/forge-logo-square.png",
+    "logo": "./assets/forge-logo.png"
+  }
+}
