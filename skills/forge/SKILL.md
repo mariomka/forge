@@ -15,7 +15,7 @@ DISCOVERY → APPROVE → RESEARCH → PLAN → [RECONFIRM] → EXECUTION → VE
 ```
 
 1. **Discovery** — Converse to understand intent, scope, and success criteria. Follow `discovery.md`.
-2. **Approve** — Present the summary (task, outcome, acceptance criteria, out of scope), the approach (high-level steps), and the lifecycle tier — full or light (see Tiers) — with a one-line justification. Write all of it in full as visible message text in the same turn, immediately before the ask-user tool call — never only in internal reasoning. This text is the deliverable of the turn, not a status note, even if your harness says text before a tool call may be skipped. Confirm or redirect. This phase is for confirmation, not exploration.
+2. **Approve** — Present the summary (task, outcome, acceptance criteria, out of scope), the approach (high-level steps), and the lifecycle tier — full or light (see Tiers) — with a one-line justification, all as plain message text, and end the turn asking for confirmation — no ask-user tool. Confirm or redirect. This phase is for confirmation, not exploration.
 3. **Research** — Spawn `strategist` (or `analyst` for deep system investigation) to gather context.
 4. **Plan** — `strategist` produces the implementation roadmap.
 5. **Reconfirm** *(conditional)* — Skip if the plan matches the approved approach. Only stop when the plan meaningfully deviates — different files, sequencing, added/removed steps, or assumptions that reshape the work. Show a concise synthesis of what changed and get confirmation.

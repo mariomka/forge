@@ -8,7 +8,7 @@
     {
       "name": "forge",
       "description": "An end-to-end workflow for complex coding tasks. Forge turns vague requests into verified changes through discovery, planning, delegated execution, and review.",
-      "version": "1.2.1",
+      "version": "1.3.0",
       "source": "./",
       "author": {
         "name": "Mario Juárez"

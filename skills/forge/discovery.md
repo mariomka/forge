@@ -9,7 +9,7 @@ Do NOT edit, create, or delete any file until discovery and approval are complet
 <HARD-GATE>
 **One question per turn. No exceptions.** Pick the single most important open thing, ask it, listen, follow the thread. Stacking multiple questions means the user answers the easy ones and the important ones get lost.
 
-**Every question goes through the ask-user tool.** Questions buried in plain text get missed. If you need to set context (show code, explain options, lay out a tradeoff), output the context in full as visible message text, then ask via the tool — in the same turn, immediately before the tool call. That context is the deliverable of the turn, not a status note: never leave it in internal reasoning, even if your harness says text before a tool call may be skipped. Use multiple-choice when the space of answers is finite, but always include "Other" so the user can redirect. Fall back to inline text only if no ask-user tool exists.
+**Ask in plain message text — never through an ask-user tool.** Harnesses hide or collapse text that precedes a tool call, so context set before a tool question gets lost. Instead: lay out the context (show code, explain options, walk the tradeoff) and end the turn with the question as the last line. When the space of answers is finite, offer the options as a short lettered list the user can answer in one word — and make clear they can answer something else entirely.
 </HARD-GATE>
 
 ## Adaptive Scaling
@@ -59,7 +59,7 @@ If the user is about to ship a bad decision, say so. Be direct, not preachy. Dis
 When you have enough to start planning, don't jump to Approve. Give the user one more chance to steer:
 
 1. Name one or two areas you **intentionally didn't dig into**. Examples: "I haven't pushed on behavior when X is empty", "We didn't talk about migration path for existing data", "I didn't ask about rollout — feature flag, cut-over, gradual?"
-2. Ask via the ask tool: *"I think I have enough to start planning. Before I move on, do you want to go deeper on any of these — [list] — or anywhere else?"*
+2. Ask: *"I think I have enough to start planning. Before I move on, do you want to go deeper on any of these — [list] — or anywhere else?"*
 3. If the user picks one, loop back into the conversation on that topic. Don't limit them to the options you named.
 4. If the user says no (or picks "move on"), transition to **Approve** in `SKILL.md`.
 
