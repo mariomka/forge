@@ -9,6 +9,7 @@ Forge is an end-to-end workflow for complex coding tasks. It turns vague request
 - `.claude-plugin/` — Claude Code `plugin.json` + `marketplace.json`.
 - `.codex-plugin/` — Codex `plugin.json`.
 - `.cursor-plugin/` — Cursor `plugin.json`.
+- `.antigravity-plugin/` — Google Antigravity `plugin.json`, auto-synced `agents/*.md`, `sync.ps1` / `sync.sh`, and `INSTALL.md`.
 - `.codex/agents/` — native Codex sub-agent TOML files (one per agent in `agents/`).
 - `.codex/INSTALL.md` — per-harness setup docs.
 
@@ -16,8 +17,8 @@ Forge is an end-to-end workflow for complex coding tasks. It turns vague request
 
 Editing one file usually means editing several. The common landmines:
 
-- **Adding a new sub-agent** — create `agents/<name>.md` AND a matching `.codex/agents/<name>.toml` (verbatim body + per-agent `sandbox_mode`), then wire it into: SKILL.md (lifecycle if it has a phase, briefing, parallelize principle if it runs concurrently), `README.md` sub-agents list, `.codex/INSTALL.md` symlink loop, and `.cursor-plugin/INSTALL.md` install/uninstall lists.
-- **Version bumps** — `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, `.codex-plugin/plugin.json`, and `.cursor-plugin/plugin.json` must stay in sync.
+- **Adding a new sub-agent** — create `agents/<name>.md` AND a matching `.codex/agents/<name>.toml` (verbatim body + per-agent `sandbox_mode`), run `.antigravity-plugin/sync.ps1 -SyncOnly` (or `.antigravity-plugin/sync.sh --sync-only`) to generate `.antigravity-plugin/agents/<name>.md`, then wire it into: SKILL.md (lifecycle if it has a phase, briefing, parallelize principle if it runs concurrently), `README.md` sub-agents list, `.codex/INSTALL.md` symlink loop, and `.cursor-plugin/INSTALL.md` install/uninstall lists.
+- **Version bumps** — `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, `.codex-plugin/plugin.json`, `.cursor-plugin/plugin.json`, and `.antigravity-plugin/plugin.json` must stay in sync.
 
 ## Rules
 

@@ -96,6 +96,29 @@ Once the marketplace listing is approved, install from Cursor Agent chat:
 
 Or search for "forge" in the plugin marketplace.
 
+### Google Antigravity
+
+Tell Antigravity in chat:
+
+```text
+Fetch and follow instructions from https://raw.githubusercontent.com/mariomka/forge/main/.antigravity-plugin/INSTALL.md
+```
+
+Or install manually by cloning the repository and running the sync/link script (which also installs a Git `post-merge` hook so every `git pull` automatically propagates upstream changes to Antigravity):
+
+**Windows (PowerShell):**
+```powershell
+git clone https://github.com/mariomka/forge.git d:\mariomka-forge
+powershell -NoProfile -ExecutionPolicy Bypass -File d:\mariomka-forge\.antigravity-plugin\sync.ps1
+```
+
+**macOS / Linux (Bash):**
+```bash
+git clone https://github.com/mariomka/forge.git ~/.gemini/forge-src
+chmod +x ~/.gemini/forge-src/.antigravity-plugin/sync.sh
+~/.gemini/forge-src/.antigravity-plugin/sync.sh
+```
+
 ### Other harnesses
 
 Forge works with any harness that can load local skills and agent definitions — point its loader at `skills/` and `agents/` in this repo. If you've wired up OpenCode, Gemini CLI, Copilot CLI, or another harness and want to contribute the integration, PRs welcome.
